@@ -1,12 +1,13 @@
 from flask import Flask, request
 import json 
+import Tokens
 from pymessenger import Bot
 
 app = Flask(__name__) # creates a flask app.. write anything instead of name
 
 #print (__name__)
 
-FB_ACCESS_TOKEN = "EAABz0JLgY20BAJ9QXkM8V9ShebHx1GpF0AGV7N3dSiYospKNkVra6DtpTQ1ZBR0SPwerk6LFoneUhB7TsbtODZC2xjhaP9i5HLxgqZBfo81pInJ5PRHDVxbebyKtaT99TmosZAlxIW1s5JhfZCOZB2NBMdPfVXpHH2xQ0OSrizzgZDZD"
+FB_ACCESS_TOKEN = getAccessToken()
 bot = Bot(FB_ACCESS_TOKEN)
 @app.route('/', methods=['GET'])
 def verify():
